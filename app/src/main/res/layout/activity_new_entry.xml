@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="gupta.kumar.arup.tkdloco.addToDb.NewEntry">
+
+
+    <include
+        android:id="@+id/tb"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tb"
+        android:layout_margin="@dimen/activity_horizontal_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/etback"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/dos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Date Of Sampling"
+                    android:onClick="datePickerShow"/>
+
+                <EditText
+                    android:onClick="datePickerShow"
+                    android:id="@+id/dot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Date Of Testing" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/etback"
+                android:padding="5dp"
+                android:layout_marginTop="4dp">
+
+
+                <EditText
+                    android:id="@+id/pbVal"
+                    android:hint="Pb"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                 <EditText
+                     android:inputType="number"
+                    android:id="@+id/alVal"
+                    android:hint="Al"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                 <EditText
+                     android:inputType="number"
+                    android:id="@+id/cuVal"
+                    android:hint="Cu"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/siVal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="Si"
+                    android:inputType="number" />
+
+
+
+                <EditText
+                     android:inputType="number"
+                    android:id="@+id/feVal"
+                    android:hint="Fe"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                 <EditText
+                     android:inputType="number"
+                    android:id="@+id/crVal"
+                    android:hint="Cr"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                 <EditText
+                     android:inputType="number"
+                    android:id="@+id/naVal"
+                    android:hint="Na"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                 <EditText
+                     android:inputType="number"
+                    android:id="@+id/snVal"
+                    android:hint="Sn"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                 <EditText
+                     android:inputType="number"
+                    android:id="@+id/bVal"
+                    android:hint="B"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:onClick="saveToDb"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/savingPBar"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>

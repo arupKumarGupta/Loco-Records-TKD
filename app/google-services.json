@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "1040672724380",
+    "firebase_url": "https://fir-appdemo-7fb37.firebaseio.com",
+    "project_id": "fir-appdemo-7fb37",
+    "storage_bucket": "fir-appdemo-7fb37.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040672724380:android:811b73b8cc8b6497",
+        "android_client_info": {
+          "package_name": "appdemo.firebase.arup.firebaseappdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040672724380-vlt0e4ed6ghn0hfqabsg6o9gl8gm4hu6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "appdemo.firebase.arup.firebaseappdemo",
+            "certificate_hash": "020ddbcb22e1e4b8d80d3fc5c6412f73b0eff2e6"
+          }
+        },
+        {
+          "client_id": "1040672724380-t0puk9gjnet932uk1us0bvvjoirk2q8o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz25xKmqwv3uPlUt_k8NQpABL8XVdqiAA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040672724380-t0puk9gjnet932uk1us0bvvjoirk2q8o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040672724380:android:80fa9ce04c53994a",
+        "android_client_info": {
+          "package_name": "gupta.kumar.arup.tkdloco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040672724380-abnskdr0va24jel2atu2in93dbq5imvh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "gupta.kumar.arup.tkdloco",
+            "certificate_hash": "1c33a421bc5afbb8361be75a53cd4ea7f36195cc"
+          }
+        },
+        {
+          "client_id": "1040672724380-t0puk9gjnet932uk1us0bvvjoirk2q8o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz25xKmqwv3uPlUt_k8NQpABL8XVdqiAA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040672724380-t0puk9gjnet932uk1us0bvvjoirk2q8o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

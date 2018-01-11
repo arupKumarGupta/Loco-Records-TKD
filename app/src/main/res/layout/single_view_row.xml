@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/singleRowBack"
+    android:background="#e7000000">
+
+
+    <TextView
+        android:id="@+id/dos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="120dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="DOS"
+        android:textSize="20sp" />
+
+
+
+    <TextView
+        android:id="@+id/pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="55dp"
+        android:gravity="center"
+        android:padding="3dp"
+        android:text="Pb"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/al"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="60dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Al"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/cu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="60dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Cu"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/si"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="60dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Si"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/fe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="60dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Fe"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/cr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="60dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Cr"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/na"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="60dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Na"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/sn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="60dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Sn"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="60dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="B"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/dot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="120dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="DOT"
+        android:textSize="20sp" />
+</LinearLayout>
+
+
