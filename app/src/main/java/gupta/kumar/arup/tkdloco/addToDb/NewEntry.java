@@ -50,6 +50,7 @@ public class NewEntry extends AppCompatActivity {
 
     ProgressBar savingPBar;
     Firebase currChild;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,17 +74,20 @@ public class NewEntry extends AppCompatActivity {
         NaEt = findViewById(R.id.naVal);
         SnEt = findViewById(R.id.snVal);
         BEt = findViewById(R.id.bVal);
-
-        mCurrDate = Calendar.getInstance();
-        day = mCurrDate.get(Calendar.DAY_OF_MONTH);
-        month = mCurrDate.get(Calendar.MONTH);
-        year = mCurrDate.get(Calendar.YEAR);
+        setDefDate();
         getLocoNumberFirst();
         savingPBar = findViewById(R.id.savingPBar);
         savingPBar.setVisibility(View.INVISIBLE);
         mRef = new Firebase("https://fir-appdemo-7fb37.firebaseio.com/locomotives");
 
 
+    }
+
+    private void setDefDate() {
+        mCurrDate = Calendar.getInstance();
+        day = mCurrDate.get(Calendar.DAY_OF_MONTH);
+        month = mCurrDate.get(Calendar.MONTH);
+        year = mCurrDate.get(Calendar.YEAR);
     }
 
     private void getLocoNumberFirst() {
@@ -115,13 +119,12 @@ public class NewEntry extends AppCompatActivity {
                         public void onDataChange(DataSnapshot dataSnapshot) {
 
 
-
                             //Map<String,ArrayList<Locomotive>> list = dataSnapshot.getValue(Map.class);
                             //reading.setReadings(list.get(0));
 
 
                             ArrayList<Locomotive> list = new ArrayList<>();
-                            for(DataSnapshot d: dataSnapshot.getChildren()){
+                            for (DataSnapshot d : dataSnapshot.getChildren()) {
                                 list.add(d.getValue(Locomotive.class));
                             }
                             reading.setReadings(list);
@@ -181,58 +184,92 @@ public class NewEntry extends AppCompatActivity {
         Cu = CuEt.getText().toString();
         Si = SiEt.getText().toString();
         Na = NaEt.getText().toString();
-        new SaveToFirebase().execute();
+        save();
+
+    }
+
+    private void clearAllInputs() {
+        dosEt.setText("");
+        dotEt.setText("");
+        PbEt.setText("");
+        AlEt.setText("");
+        CuEt.setText("");
+        SiEt.setText("");
+        FeEt.setText("");
+        CrEt.setText("");
+        NaEt.setText("");
+        SnEt.setText("");
+        BEt.setText("");
+    }
+
+    private void save() {
+        if (checkAll(dos, dot, Pb, Al, Cu, Si, Fe, Cr, Na, Sn, B)) {
+            //TODO save to db
+
+
+            Locomotive l = new Locomotive(dos, dot, Integer.valueOf(Pb), Integer.valueOf(Al), Integer.valueOf(Cu),
+                    Integer.valueOf(Si), Integer.valueOf(Fe), Integer.valueOf(Cr),
+                    Integer.valueOf(Na), Integer.valueOf(Sn), Integer.valueOf(B));
+            //Log.d("readings size",reading.getReadings().size()+"");
+            reading.addReading(l);
+            currChild.setValue(reading.getReadings());
+            //Log.d("readings size",reading.getReadings().size()+"");
+            savingPBar.setVisibility(View.INVISIBLE);
+            Toast.makeText(NewEntry.this, "Success", Toast.LENGTH_SHORT).show();
+            clearAllInputs();
+        }
     }
 
     private boolean checkAll(String dos, String dot, String pb, String al, String cu, String si, String Ferrum, String cr, String na, String sn, String b) {
 
+        boolean flag = true;
         if (dos.isEmpty()) {
             dosEt.setError("Required");
-            return false;
+            flag = false;
         }
-        if (dot.isEmpty()) {
+       /* if (dot.isEmpty()) {
             dotEt.setError("Required");
-            return false;
-        }
+            flag= false;
+        }*/
         if (pb.isEmpty()) {
             PbEt.setError("Required");
-            return false;
+            flag = false;
         }
         if (al.isEmpty()) {
             AlEt.setError("Required");
-            return false;
+            flag = false;
         }
         if (cu.isEmpty()) {
             CuEt.setError("Required");
-            return false;
+            flag = false;
         }
         if (si.isEmpty()) {
             SiEt.setError("Required");
-            return false;
+            flag = false;
         }
         if (Ferrum.isEmpty()) {
             FeEt.setError("Required");
-            return false;
+            flag = false;
         }
         if (cr.isEmpty()) {
             CrEt.setError("Required");
-            return false;
+            flag = false;
         }
         if (na.isEmpty()) {
             NaEt.setError("Required");
-            return false;
+            flag = false;
         }
         if (sn.isEmpty()) {
             SnEt.setError("Required");
-            return false;
+            flag = false;
         }
         if (b.isEmpty()) {
             BEt.setError("Required");
-            return false;
+            flag = false;
         }
 
-
-        return true;
+        if (!flag) savingPBar.setVisibility(View.INVISIBLE);
+        return flag;
     }
 
     public void datePickerShow(final View view) {
@@ -242,7 +279,7 @@ public class NewEntry extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker datePicker, int y, int m, int d) {
                 day = d;
-                month = m + 1;
+                month = m+1;
                 year = y;
                 switch (id) {
                     case R.id.dos:
@@ -254,9 +291,9 @@ public class NewEntry extends AppCompatActivity {
                 }
             }
         }, year, month, day);
-
+        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
         datePickerDialog.show();
-
+        setDefDate();
 
     }
 
@@ -267,7 +304,7 @@ public class NewEntry extends AppCompatActivity {
     }
 
 
-    class SaveToFirebase extends AsyncTask<Void,Void,Void>{
+    class SaveToFirebase extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected void onPreExecute() {
@@ -280,20 +317,19 @@ public class NewEntry extends AppCompatActivity {
                 //TODO save to db
 
 
-                Locomotive l = new Locomotive(dos,dot,Integer.valueOf(Pb),Integer.valueOf(Al),Integer.valueOf(Cu),
-                        Integer.valueOf(Si),Integer.valueOf(Fe),Integer.valueOf(Cr),
-                        Integer.valueOf(Na),Integer.valueOf(Sn),Integer.valueOf(B));
+                Locomotive l = new Locomotive(dos, dot, Integer.valueOf(Pb), Integer.valueOf(Al), Integer.valueOf(Cu),
+                        Integer.valueOf(Si), Integer.valueOf(Fe), Integer.valueOf(Cr),
+                        Integer.valueOf(Na), Integer.valueOf(Sn), Integer.valueOf(B));
                 //Log.d("readings size",reading.getReadings().size()+"");
                 reading.addReading(l);
                 currChild.setValue(reading.getReadings());
                 //Log.d("readings size",reading.getReadings().size()+"");
-
+                savingPBar.setVisibility(View.INVISIBLE);
+                Toast.makeText(NewEntry.this, "Success", Toast.LENGTH_SHORT).show();
             }
 
             return null;
         }
-
-
 
 
         @Override

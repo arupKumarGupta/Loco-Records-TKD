@@ -56,7 +56,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataVH> {
         Locomotive l = items.get(position);
 
         holder.dos.setText(l.getDos());
-        holder.dot.setText(l.getDot());
+        holder.dot.setText(l.getDot().length()==0?"-":l.getDot());
         holder.pb.setText(l.getPb() + "");
         holder.al.setText(l.getAl() + "");
         holder.cu.setText(l.getCu() + "");
